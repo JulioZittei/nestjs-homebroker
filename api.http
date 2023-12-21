@@ -1,1 +1,72 @@
-GET http://localhost:3000/rota
+### CREATES AN NEW ASSET
+POST http://localhost:3000/assets
+Content-Type: application/json
+
+{
+  "id": "PETR4",
+  "symbol": "PETR4",
+  "price": 34.4
+}
+
+
+### GET ALL ASSETS
+GET http://localhost:3000/assets
+
+
+### CREATES A NEW WALLET
+POST http://localhost:3000/wallets
+Content-Type: application/json
+
+{
+  "id": "wallet-1"
+}
+
+
+### GET ALL WALLETS
+GET http://localhost:3000/wallets
+
+
+### CREATES A NEW WALLET ASSET
+POST http://localhost:3000/wallets/wallet-1/assets
+Content-Type: application/json
+
+{
+  "asset_id": "PETR4",
+  "shares": 1000
+}
+
+
+### GET ALL WALLET ASSETS
+GET http://localhost:3000/wallets/wallet-1/assets
+
+
+### LIST ALL ORDERS
+GET http://localhost:3000/orders
+
+
+### START A NEW SELL ORDER
+POST http://localhost:3000/orders/wallet-1
+Content-Type: application/json
+
+{
+  "asset_id": "PETR4",
+  "shares": 10,
+  "price": 35,
+  "type": "SELL"
+}
+
+### EXECUTE TRANSACTION
+POST http://localhost:3000/orders/execute
+Content-Type: application/json
+
+{
+  "order_id": "65779c3a3e1b0a1aab574681",
+  "status": "OPEN", 
+  "related_investor_id": "xxxxy",
+  "broker_transaction_id": "xxxxy",
+  "negotiated_shares": 10,
+  "price": 10
+}
+
+
+
