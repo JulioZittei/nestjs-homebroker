@@ -8,6 +8,8 @@ services:
       - 5555:5555
     volumes:
       - .:/home/node/app
+    extra-hosts:
+      - 'host.docker.internal:172.17.0.1'
 
   db:
     image: zcube/bitnami-compat-mongodb:5.0.17
@@ -21,3 +23,6 @@ services:
 
 volumes:
   mongodb_data:
+networks:
+  my-network:
+    external: true

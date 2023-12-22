@@ -52,7 +52,7 @@ Content-Type: application/json
   "asset_id": "PETR4",
   "shares": 10,
   "price": 35,
-  "type": "SELL"
+  "type": "BUY"
 }
 
 ### EXECUTE TRANSACTION
